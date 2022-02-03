@@ -23,6 +23,7 @@ namespace p05
             int pocet = 0;
             double prumer;
             int value;
+            string selected = listBox1.GetItemText(listBox1.SelectedItem);
             foreach (Control ctrl in output.Controls)
             {
                 if (ctrl is TextBox)
@@ -33,7 +34,6 @@ namespace p05
                 }
                 if (ctrl is Label)
                 {
-                    string selected = listBox1.GetItemText(listBox1.SelectedItem);
                     (ctrl as Label).Text = selected;
                 }
             }
