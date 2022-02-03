@@ -51,6 +51,7 @@ namespace P02
             }
             if (pocet > 0)
             {
+
                 prumer = soucet / (double)pocet;
                 label1.Text = ("" + prumer);
             }
