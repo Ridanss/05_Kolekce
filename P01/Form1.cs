@@ -34,6 +34,7 @@ namespace P01
             {
                 if (ctrl is TextBox)
                 {
+
                     (ctrl as TextBox).Visible = false;
                 }
             }
