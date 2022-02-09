@@ -19,17 +19,27 @@ namespace P06
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            double value;
             bool enable_execute = true;
             foreach (Control ctrl in panel1.Controls)
             {
                 if (ctrl is TextBox)
                 {
-                    value = Convert.ToDouble(ctrl.Text);
-                    if (value != (int)value)
+                    string textboxValue = ctrl.Text;
+                    if (textboxValue.IndexOf(",") >= 0 || textboxValue.IndexOf(".") >= 0)
                     {
                         enable_execute = false;
+                        /*value = Convert.ToDouble(ctrl.Text);
+                        if (double.TryParse(ctrl.Text, out value))
+                        {
+                            enable_execute = false;
+                        }
+                        else enable_execute = true;
+                        if (value != (int)value)
+                        {
+                            enable_execute = false;
+                        }*/
                     }
+                    else enable_execute = true;
                 }
             }
             execute.Enabled = enable_execute;
